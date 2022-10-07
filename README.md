@@ -87,7 +87,7 @@ DeviceImageLoadEvents
 
 ### Locker Hollowing
 
-Locker Hollowing is a hybrid between Process Hollowing and Process Locker.
+Locker Hollowing is a hybrid between Process Hollowing and Process Lockering.
 
 ![LockerHollowing](img/LockerHollowing.png)
 
