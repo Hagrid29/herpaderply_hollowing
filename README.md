@@ -143,7 +143,7 @@ It would be logged for process herpaderping, process ghosting and process locker
 
 ![detection-of-process-lockering](img/detection-of-process-lockering.png)
 
-![detection-of-process-ghosting](img\detection-of-process-ghosting.png)
+![detection-of-process-ghosting](img/detection-of-process-ghosting.png)
 
 
 
